@@ -25,6 +25,7 @@ Terraform-driven AWS landing zone for non-production environments with opinionat
 - **AWS CLI** configured with appropriate credentials
 - **jq** and **GNU make** (for helper scripts)
 - Direct or federated access to non-production AWS accounts
+- [bash-library](https://github.com/hperezrodal/bash-library) cloned alongside this repository (provides shared shell helpers)
 
 ### AWS Permissions
 
@@ -105,7 +106,6 @@ infra-aws-accounts/
 ## 📚 Documentation
 
 - [Contribution Guidelines](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md) _(if present)_
 - [License](LICENSE)
 
 ## 🤝 Contributing
