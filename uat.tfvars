@@ -19,7 +19,7 @@ eks_max_size       = 5
 eks_desired_size   = 2
 eks_instance_types = ["t3.medium"]
 
-hosted_zone_id = "Z02168321ANVO1Q6JG3VZ"
+hosted_zone_id = "<complete>"
 domain_name    = "mycompany.link"
 
 source_account_id="<complete>"
