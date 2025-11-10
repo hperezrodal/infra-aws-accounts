@@ -3,15 +3,15 @@
 # Check if environment is provided
 if [ -z "$1" ]; then
     echo "Usage: $0 <environment>"
-    echo "Environment must be one of: dev, stg, uat"
+    echo "Environment must be one of: dev, qa, uat"
     exit 1
 fi
 
 ENV=$1
 
 # Validate environment
-if [[ ! "$ENV" =~ ^(dev|stg|uat)$ ]]; then
-    echo "Invalid environment. Must be one of: dev, stg, uat"
+if [[ ! "$ENV" =~ ^(dev|qa|uat)$ ]]; then
+    echo "Invalid environment. Must be one of: dev, qa, uat"
     exit 1
 fi
 
