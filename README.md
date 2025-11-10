@@ -21,7 +21,7 @@ Terraform-driven AWS landing zone for non-production environments with opinionat
 
 ### Required Tooling
 
-- **Terraform** `>= 1.5.0`
+- **Terraform**: Check the latest version [here](https://releases.hashicorp.com/terraform/)
 - **AWS CLI** configured with appropriate credentials
 - **jq** and **GNU make** (for helper scripts)
 - Direct or federated access to non-production AWS accounts
@@ -79,9 +79,9 @@ terraform apply -var-file="env/uat.tfvars"
 
 All environment documentation lives under `docs/`. Each guide contains connection details for bastion hosts, operational playbooks, and escalation paths:
 
-- [Develop Environment](docs/dev.md) _(coming soon)_
-- [Staging Environment](docs/stg.md)
-- [UAT Environment](docs/uat.md) _(coming soon)_
+- Develop Environment
+- Staging Environment
+- UAT Environment
 
 ## 🛠️ Project Structure
 
