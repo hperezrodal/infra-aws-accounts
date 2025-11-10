@@ -13,4 +13,4 @@ terraform init -backend-config=backend-config.hcl
 
 # Select workspace and plan
 terraform workspace select $ENV
-terraform plan -var-file="env/$ENV.tfvars" -lock=false
+terraform plan -var-file="$ENV.tfvars" -lock=false

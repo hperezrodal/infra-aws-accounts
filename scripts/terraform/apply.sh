@@ -8,4 +8,4 @@ fi
 
 echo "ENV=$ENV"
 
-terraform apply -var-file="env/$ENV.tfvars" -lock=false
+terraform apply -var-file="$ENV.tfvars" -lock=false

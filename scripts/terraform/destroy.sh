@@ -8,4 +8,4 @@ fi
 
 echo "ENV=$ENV"
 
-terraform destroy -var-file="env/$ENV.tfvars" -lock=false
+terraform destroy -var-file="$ENV.tfvars" -lock=false
