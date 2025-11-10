@@ -1,0 +1,6 @@
+[bastion]
+# This will be populated by Terraform output
+
+[all:vars]
+ansible_ssh_private_key_file=./secrets/keys/admin-key-dev.pem
+ansible_user=ec2-user

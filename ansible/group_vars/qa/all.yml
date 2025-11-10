@@ -1,0 +1,4 @@
+---
+environment: qa
+authorized_keys_file: authorized_keys/qa
+

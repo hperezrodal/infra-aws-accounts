@@ -1,0 +1,16 @@
+---
+- name: Ensure .ssh directory exists
+  file:
+    path: /home/ec2-user/.ssh
+    state: directory
+    mode: '0700'
+    owner: ec2-user
+    group: ec2-user
+
+- name: Copy authorized keys file
+  copy:
+    src: "{{ authorized_keys_file }}"
+    dest: /home/ec2-user/.ssh/authorized_keys
+    owner: ec2-user
+    group: ec2-user
+    mode: '0600' 

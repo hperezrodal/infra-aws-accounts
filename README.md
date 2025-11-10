@@ -11,7 +11,7 @@ Terraform-driven AWS landing zone for non-production environments with opinionat
 
 ## 🚀 Overview
 
-- Multi-account AWS architecture focused on **develop**, **staging**, and **UAT** environments
+- Multi-account AWS architecture focused on **develop**, **qa**, and **uat** environments
 - Reusable Terraform modules with opinionated defaults
 - Automated networking, IAM guardrails, and foundational services
 - Documentation-first approach with environment-specific runbooks
@@ -26,6 +26,7 @@ Terraform-driven AWS landing zone for non-production environments with opinionat
 - **jq** and **GNU make** (for helper scripts)
 - Direct or federated access to non-production AWS accounts
 - [bash-library](https://github.com/hperezrodal/bash-library) cloned alongside this repository (provides shared shell helpers)
+- [ops-shell](https://github.com/hperezrodal/ops-shell) cloned alongside this repository (provides operational shell functions)
 
 ### AWS Permissions
 
@@ -54,7 +55,7 @@ source ~/.bashrc
 ```bash
 terraform init
 terraform workspace new dev
-terraform workspace new stg
+terraform workspace new qa
 terraform workspace new uat
 ```
 
@@ -66,10 +67,10 @@ terraform workspace select dev
 terraform plan -var-file="env/dev.tfvars"
 terraform apply -var-file="env/dev.tfvars"
 
-# Staging environment
-terraform workspace select stg
-terraform plan -var-file="env/stg.tfvars"
-terraform apply -var-file="env/stg.tfvars"
+# QA environment
+terraform workspace select qa
+terraform plan -var-file="env/qa.tfvars"
+terraform apply -var-file="env/qa.tfvars"
 
 # UAT environment
 terraform workspace select uat
@@ -80,15 +81,15 @@ terraform apply -var-file="env/uat.tfvars"
 All environment documentation lives under `docs/`. Each guide contains connection details for bastion hosts, operational playbooks, and escalation paths:
 
 - Develop Environment
-- Staging Environment
+- QA Environment
 - UAT Environment
+- Bastion access keys are managed under `secrets/` (per-environment credentials) and `ansible/authorized_keys` (approved SSH public keys)
 
 ## 🛠️ Project Structure
 
 ```
 infra-aws-accounts/
 ├── modules/               # Reusable Terraform modules
-├── env/                   # Environment tfvars
 ├── docs/                  # Environment and ops documentation
 ├── scripts/               # Bootstrap & helper scripts
 ├── policies/              # IAM templates and SCPs

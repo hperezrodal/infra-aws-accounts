@@ -1,0 +1,3 @@
+---
+environment: uat
+authorized_keys_file: authorized_keys/uat
